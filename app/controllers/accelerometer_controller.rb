@@ -3,7 +3,7 @@ class AccelerometerController < ApplicationController
   end
   
   def create
-    puts accelerometer_params
+    render :json => accelerometer_params
   end
   
   private
