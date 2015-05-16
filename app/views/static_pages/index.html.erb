@@ -1,15 +1,23 @@
-<h1>Get Up and Move!</h1>
-<h2>A Pavlok Integration Application</h2>
-<h3>Event Info</h3>
-<%= simple_form_for @event, url: events_path do |f| %>
-  <%= f.association :notification_type, label_method: :name, selected: 'vibrate'%>
-  <%= f.input :amplitude, input_html: { min: '0', max: '255', value: '125' } %>
-  <%= f.submit 'Trigger Event' %>
-<% end %>
-<h3>Setting</h3>
-<form id='settings' name='settings'>
-  Maximum sitting time(min):<input type='number' name='max_sit_time' value='60' min='0'/><br />
-  Minimum walking time(min):<input type='number' name='min_walk_time' value='2' min='1'/><br />
-  Current sitting time(min):<span id='current_sit_time'></span><br />
+<div class='header'>
+  <h1>Get Your Rear in Gear</h1>
+  <h2>A Pavlok Integration Application</h2>
+</div>
+<div class='container'>
+  <div class='event'>
+    <h3>Event Info</h3>
+    <%= simple_form_for @event, url: events_path do |f| %>
+      <%= f.association :notification_type, label_method: :name, selected: 'vibrate'%>
+      <%= f.input :amplitude, input_html: { min: '0', max: '255', value: '125' } %>
+      <%= f.submit 'Trigger Event' %>
+    <% end %>
+  </div>
+  <div class='settings'>
+    <h3>Setting</h3>
+    <form id='settings' name='settings'>
+      Maximum sitting time(min):<input type='number' name='max_sit_time' value='60' min='0'/><br />
+      Minimum walking time(min):<input type='number' name='min_walk_time' value='2' min='1'/><br />
+      Current sitting time(min):<span id='current_sit_time'></span><br />
 
-</form>
+    </form>
+  </div>
+</div>
