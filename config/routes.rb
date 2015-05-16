@@ -5,7 +5,7 @@ Pavlok::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
   resources :events
-  resources :accelerometer, :only => :index
+  resources :accelerometer, :only => [:index, :create]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
