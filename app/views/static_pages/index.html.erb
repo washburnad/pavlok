@@ -1,2 +1,8 @@
 <h1>Get Up and Move!</h1>
-<h3>A Pavlok Integration Appl</h3>
+<h2>A Pavlok Integration Application</h2>
+<h3>Event Info</h3>
+<%= simple_form_for @event, url: events_path do |f| %>
+  <%= f.association :notification_type, label_method: :name %>
+  <%= f.input :amplitude, input_html: { min: '0', max: '255' } %>
+  <%= f.submit 'Trigger Event' %>
+<% end %>
